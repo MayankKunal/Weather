@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-
+import perfectday from '../assets/perfect-day.svg'
 const SearchBox = styled.form`
   display: flex;
   flex-direction: row;
@@ -44,13 +44,14 @@ const CityComponent = (props) => {
   const { updateCity, fetchWeather } = props;
   return (
     <>
-      <WelcomeWeatherLogo src={"/react-weather-app/icons/perfect-day.svg"} />
+      <WelcomeWeatherLogo src={`${perfectday}`} />
       <ChooseCityLabel>Find Weather of your city</ChooseCityLabel>
       <SearchBox onSubmit={fetchWeather}>
         <input
           onChange={(e) => updateCity(e.target.value)}
           placeholder="City"
         />
+        
         <button type={"submit"}>Search</button>
       </SearchBox>
     </>
